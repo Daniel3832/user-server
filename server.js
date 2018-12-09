@@ -4,11 +4,14 @@ const json = require('koa-json')
 let Router = require('koa-router');
 let router = new Router();
 
+const serve = require('koa-static')
+app.use(serve('./myshop'))
+
 
 let users = [
-	{ name: 'Kevin', phone: 1111111, email: 'k@gmail.com' },
-	{ name: 'Star', phone: 2222222, email: 'sss@gmail.com' },
-	{ name: 'Vick', phone: 3333333, email: 'V@gmail.com' },
+	// { id: 1, name: 'sky', phone: 1111111, email: 'k@gmail.com' },
+	// { id: 2, name: 'Star', phone: 2222222, email: 'sss@gmail.com' },
+	// { id: 3, name: 'Vick', phone: 3333333, email: 'V@gmail.com' },
 ]
 
 router
@@ -48,5 +51,5 @@ app
 	.use(router.allowedMethods())
 	
     .listen(3000, function(){
-   console.log('Server running on https://localhost:3000')
+   console.log('Server running on http://localhost:3000')
 });
